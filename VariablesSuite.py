@@ -30,14 +30,22 @@ print("La note de l'etudiant: ", etudiant.get("note"))
 
 # Exercice 11
 # Stocker des informations dans le dictionnaire
+<<<<<<< HEAD
 utilisateur = {}
+=======
+'''utilisateur = {}
+>>>>>>> origin/main
 a= input("Veuiller saisir votre nom: " )
 b = input("Donner votre age: ")
 c = input("Veuiller saisir la ville: " )
 utilisateur["nom"] = a
 utilisateur["age"] = b
 utilisateur["ville"] = c 
+<<<<<<< HEAD
 print("Les informations du dictionnaire : ", utilisateur)
+=======
+print("Les informations du dictionnaire : ", utilisateur)'''
+>>>>>>> origin/main
 
 # Exercice 12
 # Calculer la moyenne des notes
