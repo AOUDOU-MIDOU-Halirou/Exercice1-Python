@@ -1,5 +1,5 @@
 # creation d'un mot de passe
-'''mot_de_passe = ""
+mot_de_passe = ""
 
 while mot_de_passe != "python123":
     mot_de_passe = input("Entrez le mot de passe :")
@@ -61,7 +61,7 @@ for i in range(2,51):
             print(f"Le nombre {i} n'est pas remier.")
             break       
     else:
-        print(f"le nombre {i} est premier")'''
+        print(f"le nombre {i} est premier")
         
 # Exercice 9
 # ce programme demande un nombre a l'utilisateur 
