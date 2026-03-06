@@ -1,5 +1,5 @@
 # creation d'un mot de passe
-mot_de_passe = ""
+'''mot_de_passe = ""
 
 while mot_de_passe != "python123":
     mot_de_passe = input("Entrez le mot de passe :")
@@ -42,10 +42,33 @@ for i in range(1,nombreFactoriel+1):
 
 # exercice 7
 # nombre premier
-'''nombrepremier = int(input("Veuillez entrer un nombre: "))
-for i in range(1,nombrepremier+1):
-    for x in range(1,i):
+nombrepremier = int(input("Veuillez entrer un nombre: "))
+est_premier = True
+for i in range(2,nombrepremier):
+    if nombrepremier % i ==0:
+        est_premier=False
+        break
+if est_premier == True:
+    print(f"Le nombre {nombrepremier} est premier.")
+else:
+    print(f"Le nombre {nombrepremier} n'est pas premier.")
+    
+# Exercice 8
+# Afficher tout les nombres premiers entre 1 et 50
+for i in range(2,51):
+    for x in range(2,i):
         if i % x == 0:
-            print(i," n'est pas un nombre premier")
-        else:
-            print(i,("est un nombre premier")) '''
+            print(f"Le nombre {i} n'est pas remier.")
+            break       
+    else:
+        print(f"le nombre {i} est premier")'''
+        
+# Exercice 9
+# ce programme demande un nombre a l'utilisateur 
+# jusqu'a ce que ce dernier entre 0
+utili = 4
+somme = 0
+while utili != 0:
+    utili = int(input("Veuillez donner un nombre: "))
+    somme = somme + utili
+print(f"La somme = {somme}")
