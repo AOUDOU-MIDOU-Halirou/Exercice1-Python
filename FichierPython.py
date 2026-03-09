@@ -29,4 +29,15 @@ with open("etudiant.txt", "r") as fichier:
     contenu = fichier.read()
     print("Les informations du fichier: ", contenu)
     print(f"le nombre d'etudiant: {len(contenu)}")
+
+# Exercice 5
+# ce programme ouvre le fichier etudiant.txt, 
+# demande a l'utilisateur un nom et 
+# verifie si le nom existe dans la liste
+nomuti = input("Veuillez entrer votre nom: ").strip()
+with open("etudiant.txt","r") as fichier:
+    if any(nomuti in ligne.strip() for ligne in fichier):
+        print(f"{nomuti} est dans le fichier.")
+    else:
+        print(f"Ce {nomuti} n'existe pas.")
  
