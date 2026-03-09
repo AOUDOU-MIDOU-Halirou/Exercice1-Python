@@ -1,18 +1,45 @@
 # Gestion des contacts
+import json
 def ajouter_contact():
-    nom = str(input("Veuillez saisir votre nom: "))
-    tel = int(input("Saisir votre numero de telephone: "))
-    email = str(input("Veuillez saisir votre email: "))
+    nom = str(input("Veuillez saisir votre nom:"))
+    telephone = int(input("Saisir votre numero de telephone: "))
+    email = str(input("Veuillez saisir votre email:"))
+    dic = {"Nom": nom, "Telephone": telephone, "Email": email}
     with open("contacts.txt", "a") as fichier:
-        fichier.write({"nom": nom, "telephone": tel,  "email": email} + "\n")
+        fichier.write(json.dumps(dic) + "\n")
 def afficher_contacts():
     with open("contacts.txt", "r") as fichier:
-        contact = fichier.read()
-        print(contact)
+        for ligne in fichier:
+            contact = json.loads(ligne)
+            print("Nom:", contact["Nom"])
+            print("Telephone:", contact["Telephone"])
+            print("Email:", contact["Email"])
+            print("-------------------------------------")
 def rechercher_contact():
-    pass
+    nom = str(input("Veuillez saisir votre nom:")).strip()
+    with open("contacts.txt", "r") as fichier:
+        contact = fichier.read()
+        if nom in contact:
+            #print("Nom:", contact["Nom"])
+            #print("Telephone:", contact["Telephone"])
+            #print("Email:", contact["Email"])
+            print("Ce nom est sur la liste.")
+            print("-------------------------------------")
+        else:
+            print("Contact introuvable.")
+
+
 def supprimer_contact():
-    pass
+    nom = str(input("Veuillez saisir votre nom:")).strip()
+    with open("contacts.txt", "r") as fichier:
+        contact = fichier.read()
+        if nom in contact:
+            del contact[nom]
+            print("L'element supprimer.")
+            afficher_contacts()
+        else:
+            print("Ce nom ne figure pas sur la liste.")
+        
 def menu():
     print("=== Gestionnaire de Contacts ===")
     print("1. Ajouter un contact ")
